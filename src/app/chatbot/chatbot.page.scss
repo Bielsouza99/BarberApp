@@ -1,0 +1,82 @@
+.mensagem {
+    border-radius: 50px;
+    margin: 0 15px 10px;
+    padding: 15px 20px;
+    position: relative;
+    font-weight: bold;
+}
+
+.mensagem.para {
+    background-color: #2095FE;
+    color: #fff;
+    margin-left: 100px;
+    text-align: left
+}
+
+.mensagem.de {
+    background-color: #E5E4E9;
+    color: #363636;
+    margin-right: 100px;
+}
+
+.mensagem.para+.mensagem.para,
+.mensagem.de+.mensagem.de {
+    margin-top: -10px;
+}
+
+// .input_messagem {
+//     border: 1px solid #603CD7;
+//     border-radius: 15px;
+// }
+
+// .footer{
+//     position: fixed;
+//     bottom: 5%;
+// }
+
+ion-content {
+    background-color: #f5f5f5;
+}
+
+.chats {
+    height: 100%;
+    //height: 395px;
+    position: relative;
+    z-index: 0;
+}
+
+.chats .chatbox {
+    // height: calc(100% - 80px);
+    height: 98%;
+    overflow-x: hidden;
+    padding: 0 16px;
+    padding-bottom: 30px;
+}
+
+.input_field {
+    padding: 5px;
+    display: flex;
+
+    ion-input {
+        flex: 3;
+        border: 0;
+        border-bottom: 1px #000;
+        border-style: solid;
+    }
+
+    button {
+        flex: 1;
+    }
+}
+
+ion-footer {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.11);
+    background-color: #fff;
+}
+
+// .icon{
+//     font-size: 50px;
+//     opacity: 0.5;
+//     padding-left: 40px;
+//     align-self: center;
+// }

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">Criar barbearia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="barbeariaForm" (ngSubmit)="enviarForm()">
+      <ion-item>
+        <ion-label position="floating">Nome da Barbearia</ion-label>
+        <ion-input formControlName="nome" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contato</ion-label>
+        <ion-input formControlName="contato" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Instagram</ion-label>
+        <ion-input formControlName="instagram" type="text" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Criar barbearia</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+</ion-content>

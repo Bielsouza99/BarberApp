@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form" [formGroup]="cadastroForm"  (ngSubmit)="tentarCadastro(cadastroForm.value)">
+ 
+    <ion-item>
+      <ion-label  position="floating" color="primary">E-mail</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label  position="floating" color="primary">Senha</ion-label>
+      <ion-input type="password" formControlName="senha" class="form-control" required></ion-input>
+    </ion-item>
+ 
+    
+    <ion-button  class="submit-btn" type="submit"  [disabled]="!cadastroForm.valid">Register</ion-button>
+    <label class="error-message">{{mensagem_erro}}</label>
+    <label class="success-message">{{mensagem_sucesso}}</label>
+  </form>
+  <p>Já tem uma conta? <a (click)="irLogin()">Faça o login</a></p>
+</ion-content>

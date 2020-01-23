@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">Chatbot</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="chats">
+    <div class="chatbox no-scroll">
+      <div *ngFor="let mensagem of mensagens | async">
+        <div class="mensagem" [ngClass]="{'de': mensagem.enviadaPor === 'bot',
+                                          'para': mensagem.enviadaPor === 'usuario'}">
+          {{mensagem.conteudo}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-footer>
+    <div class="input_field ion-padding">
+      <ion-input [(ngModel)]="mensagem" name="mensagem" class="input_mensagem">
+      </ion-input>
+      <ion-button clear icon-only item-right (click)="enviarMensagem()" color="dark" class="btn-enviar" shape="round"
+        fill="clear">
+        <ion-icon class="enviar" name="send"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-footer>
+
+</ion-content>

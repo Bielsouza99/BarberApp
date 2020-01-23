@@ -1,0 +1,8 @@
+{
+  "name": "barber",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

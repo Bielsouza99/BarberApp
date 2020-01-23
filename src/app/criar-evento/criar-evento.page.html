@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">Criar evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines='full'>
+    <form [formGroup]='eventoForm' (ngSubmit)='enviarForm()'>
+      <ion-item>
+        <ion-label position='floating'>Cliente</ion-label>
+        <ion-input formControlName='cliente' type='text' required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Barbeiro</ion-label>
+        <ion-input formControlName='barbeiro' type='text' required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Barbearia</ion-label>
+        <ion-input formControlName='barbearia' type='text' required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Horário</ion-label>
+        <ion-datetime displayFormat='D MMM H mm' pickerFormat='D MMM H mm' formControlName='horario'></ion-datetime>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type='submit' color='primary' shape='full' expand='block'>Criar evento</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+</ion-content>

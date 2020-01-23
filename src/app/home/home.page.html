@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated" mode="ios">
+    <ion-list-header class="ios hydrated">
+      Eventos
+    </ion-list-header>
+
+    <ion-item *ngFor='let evento of Eventos' class="user-list">
+      <ion-label>
+        <h5>
+          <ion-icon name='person'></ion-icon> {{evento.cliente}}
+        </h5>
+        <ion-icon name="pin"></ion-icon>  <a style="text-decoration: none; color: black;" href='https://google.com/maps/search/{{evento.barbearia}}' target="_blank">
+          {{evento.barbearia}}
+        </a>
+        <p>
+          <ion-icon name="time"></ion-icon> {{evento.horario | date: 'dd/MM HH:mm'}}
+        </p>
+        <p>
+          <ion-icon name="cut"></ion-icon> {{evento.barbeiro}}
+        </p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/editar-evento/',evento.id]">
+          <ion-icon name="md-create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)='deletarEvento(evento.id)'>
+          <ion-icon name="ios-trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-slides pager="true" [options]="slideOptions">
+    <ion-slide *ngFor="let evento of Eventos">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{evento.barbeiro}}</ion-card-title>
+          <ion-card-subtitle>{{evento.horario | date: 'dd/MM HH:mm'}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <h5>
+            <ion-icon name='person'></ion-icon> {{evento.cliente}}
+          </h5>
+          <a href='https://google.com/maps/search/{{evento.barbearia}}' target="_blank">
+            <ion-icon name="pin"></ion-icon> {{evento.barbearia}}
+          </a>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
